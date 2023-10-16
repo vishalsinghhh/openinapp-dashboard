@@ -1,0 +1,15 @@
+.sideMain {
+  width: 50%;
+  height: 100vh;
+  background: linear-gradient(180deg, #4285f4 0%, #286de0 100%);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  font-family: 'poppins';
+}
+
+.landing{
+    display: flex;
+}
+.imgMar{
+    width: 40px;
+    margin: 5px;
+}
