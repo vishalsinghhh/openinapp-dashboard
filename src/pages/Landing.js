@@ -4,10 +4,10 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import "./landing.css";
-import github from "../images/github.svg"
-import linkedin from "../images/linkedin.svg"
-import twitter from '../images/twitter.svg'
-import discord from '../images/discord.svg'
+import github from "../images/github.svg";
+import linkedin from "../images/linkedin.svg";
+import twitter from "../images/twitter.svg";
+import discord from "../images/discord.svg";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -29,20 +29,22 @@ const Landing = () => {
     <>
       <div className="landing">
         <div className="sideMain">
-            <div>LOGO</div>
-            <div>Board</div>
+          <div className="logo">LOGO</div>
+          <div className="board">Board.</div>
+          <div className="icons">
             <div>
-                <img src={github} alt="" className="imgMar"/>
+              <img src={github} alt="" className="imgMar img" />
             </div>
             <div>
-                <img src={twitter} alt="" className="imgMar"/>
+              <img src={twitter} alt="" className="imgMar img" />
             </div>
             <div>
-                <img src={linkedin} alt="" />
+              <img src={linkedin} alt="" className="img"/>
             </div>
             <div>
-                <img src={discord} alt="" />
+              <img src={discord} alt="" className="img"/>
             </div>
+          </div>
         </div>
         <div>
           <button

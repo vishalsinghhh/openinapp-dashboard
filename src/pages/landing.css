@@ -3,13 +3,28 @@
   height: 100vh;
   background: linear-gradient(180deg, #4285f4 0%, #286de0 100%);
   clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
-  font-family: 'poppins';
+  color: #fff;
 }
 
 .landing{
     display: flex;
 }
+.logo{
+    font-family: 'poppins';
+    font-weight: 700;
+    font-size: 20px;
+}
+.board{
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 64px;
+}
+.icons{
+    display: flex;
+}
+.img{
+    width: 30px;
+}
 .imgMar{
-    width: 40px;
-    margin: 5px;
+    padding: 2px;
 }
