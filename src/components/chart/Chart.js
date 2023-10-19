@@ -13,21 +13,22 @@ import { Bar } from "react-chartjs-2";
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 const Chart = (props) => {
+  console.log(props);
   const data = {
     labels: [
-      `Week ${props.dataUser[0].week}`,
-      `Week ${props.dataUser[1].week}`,
-      `Week ${props.dataUser[2].week}`,
-      `Week ${props.dataUser[3].week}`,
+      `Week ${props?.dataUser[0]?.week}`,
+      `Week ${props?.dataUser[1]?.week}`,
+      `Week ${props?.dataUser[2]?.week}`,
+      `Week ${props?.dataUser[3]?.week}`,
     ],
     datasets: [
       {
         label: "User",
         data: [
-          props.dataUser[0].activity,
-          props.dataUser[1].activity,
-          props.dataUser[2].activity,
-          props.dataUser[3].activity,
+          props?.dataUser[0]?.activity,
+          props?.dataUser[1]?.activity,
+          props?.dataUser[2]?.activity,
+          props?.dataUser[3]?.activity,
         ],
         backgroundColor: "#98D89E",
         borderRadius: 5,

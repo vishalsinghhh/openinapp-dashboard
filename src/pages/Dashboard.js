@@ -1,5 +1,4 @@
-import React from "react";
-import "../components/components.css";
+import React, { useState, useEffect } from "react";
 import NavBar from "../components/navbar/NavBar";
 import Sidebar from "../components/sidebar/Sidebar";
 import Stats from "../components/stats/Stats";
@@ -10,20 +9,19 @@ import revenue from "../images/revenue.svg";
 import like from "../images/like.svg";
 import transactions from "../images/transactions.svg";
 import user from "../images/user.svg";
+import "../components/components.css";
 
-async function getData() {
-  const res = await fetch("http://localhost:3000/api/stats");
+const Dashboard = () => {
+  const [data, setData] = useState();
+  useEffect(() => {
+    const fn = async () => {
+      const res = await fetch("https://mychessgame.onrender.com/api/stats");
+      const main = await res.json();
+      setData(main.data);
+    };
+    fn();
+  }, []);
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
-
-const Dashboard = async () => {
-  const data = await getData();
-  console.log(data);
   return (
     <div className="dashboard">
       <div className="checkWidth">
@@ -35,50 +33,61 @@ const Dashboard = async () => {
           <NavBar />
         </div>
         <div className="gridContainer">
+          
+            <div>
+            {data && (
+              <Stats
+                name="Revenues"
+                data={data?.totalRevenue}
+                inc="+2.5%"
+                img={revenue}
+                color="#7FCD93"
+              />
+            )}
+            </div>
+          
+
           <div>
-            <Stats
-              name="Revenues"
-              data={data.totalRevenue}
-              inc="+2.5%"
-              img={revenue}
-              color="#7FCD93"
-            />
+            {data && (
+              <Stats
+                name="Transactions"
+                data={data?.totalTransactions}
+                inc="+1.7%"
+                img={transactions}
+                color="#DEBF85"
+              />
+            )}
           </div>
           <div>
-            <Stats
-              name="Transactions"
-              data={data.totalTransactions}
-              inc="+1.7%"
-              img={transactions}
-              color="#DEBF85"
-            />
-          </div>
-          <div>
-            <Stats
+          {data && <Stats
               name="Likes"
-              data={data.totalLikes}
+              data={data?.totalLikes}
               inc="+1.4%"
               img={like}
               color="#ECA4A4"
-            />
+            />}
+            
           </div>
 
           <div>
-            <Stats
+          {data && <Stats
               name="Users"
-              data={data.totalUsers}
+              data={data?.totalUsers}
               inc="+4.2%"
               img={user}
               color="#A9B0E5"
-            />
+            />}
+            
           </div>
         </div>
         <div className="gap1"></div>
-        <Chart dataGuest={data.dataGuest} dataUser={data.dataUser}/>
+        {data &&<Chart dataGuest={data?.dataGuest} dataUser={data?.dataUser}/>}
+        
         <div className="gap1"></div>
         <div className="Product">
           <div className="Product1 Product11">
-            <Product className="Product2" doughnut={data.doughnut}/>
+          {data &&<Product className="Product2" doughnut={data?.doughnut}/>}
+            
           </div>
           <div className="Product1">
             <Profile />

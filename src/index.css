@@ -37,7 +37,7 @@ html{
   font-weight: 700;
   font-size: 72px;
 }
-.icons {
+.icons1 {
   display: flex;
 }
 .img {
@@ -80,7 +80,7 @@ html{
   margin-right: 10px;
 }
 
-.userInput {
+.userInput1 {
   background: #fff;
   border-radius: 10px;
   width: 380px;
@@ -112,7 +112,7 @@ html{
   margin-bottom: 30px;
 }
 
-.userInput input {
+.userInput1 input {
   border: none;
   background: #F5F5F5;
   border-radius: 10px;
@@ -122,7 +122,7 @@ html{
 }
 
 /* Remove the focus border (outline) */
-.userInput input:focus {
+.userInput1 input:focus {
   outline: none;
 }
 .forgot{

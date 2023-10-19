@@ -5,14 +5,10 @@ import { auth } from "../../utils/firebase";
 import search from "../../images/search.svg";
 import bell from "../../images/bell.svg";
 import user1 from "../../images/user.png";
-import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
-  const router = useNavigate()
   const [user] = useAuthState(auth);
-  if(!user){
-    router("/");
-  }
+  
   return (
     <div className="dashMain">
       <div className="dashTitle">Dashboard</div>

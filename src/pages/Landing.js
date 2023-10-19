@@ -64,7 +64,7 @@ const Home=()=> {
         <div className='sideMain'>
           <div className='logo'>LOGO</div>
           <div className='board'>Board.</div>
-          <div className='icons'>
+          <div className='icons1'>
             <div>
               <img
                 src={github}
@@ -110,7 +110,7 @@ const Home=()=> {
               <AiFillApple className="FcGoogle" /> Sign {isSignIn?'in':'up'} with Apple
             </button>
           </div>
-          <div className="userInput">
+          <div className="userInput1">
             <div className="flexCol">
               <div className="emailHead">Email address</div>
 
